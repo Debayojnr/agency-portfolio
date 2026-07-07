@@ -1,0 +1,28 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root { color-scheme: light; }
+html { -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility; }
+body {
+  background: theme('colors.cream');
+  color: theme('colors.ink');
+  font-family: theme('fontFamily.body');
+  overflow-x: hidden;
+}
+::selection { background: theme('colors.clay'); color: #fff; }
+
+.shell { max-width: theme('maxWidth.shell'); margin: 0 auto; padding-left: 24px; padding-right: 24px; }
+.eyebrow {
+  font-family: theme('fontFamily.mono');
+  font-size: 11px; letter-spacing: .18em; text-transform: uppercase;
+  color: theme('colors.steel');
+}
+.grain::before {
+  content: ""; position: fixed; inset: 0; pointer-events: none; z-index: 1; opacity: .5;
+  background-image: radial-gradient(rgba(0,0,0,0.04) 0.5px, transparent 0.5px);
+  background-size: 3px 3px;
+}
+@media (prefers-reduced-motion: reduce) {
+  * { scroll-behavior: auto !important; }
+}
